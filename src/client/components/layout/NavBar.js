@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router";
 
 export class NavBar extends React.Component {
     render() {
-        return(
+        return (
             <div>
-                <div style={{background: '#444', height: '60px'}}>
-                
-                </div>
-                {this.props.children}
+                <h1>
+                    kindle-article-sender
+                </h1>
+                <section>
+                    {this.props.children}
+                </section>
             </div>
         );
     }
