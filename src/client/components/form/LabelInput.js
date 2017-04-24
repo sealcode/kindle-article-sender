@@ -3,7 +3,7 @@ import React from "react";
 const kindleEmailRegex = "[a-z0-9._%+-]+@kindle\.com$";
 
 export const EmailInput = ({ value, handleChange }) => (
-    <label htmlFor="kindleEmail">
+    <label htmlFor="kindleEmail" className="form__label">
         Kindle email
         <input
             required
@@ -19,7 +19,7 @@ export const EmailInput = ({ value, handleChange }) => (
 );
 
 export const URLInput = ({ value, handleChange }) => (
-    <label htmlFor="articleURL">
+    <label htmlFor="articleURL" className="form__label">
         Article URL
         <input
             required

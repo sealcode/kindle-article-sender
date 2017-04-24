@@ -8,9 +8,7 @@ export class NavBar extends React.Component {
                 <h1>
                     kindle-article-sender
                 </h1>
-                <section>
-                    {this.props.children}
-                </section>
+                {this.props.children}
             </div>
         );
     }

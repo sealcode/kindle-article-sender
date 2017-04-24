@@ -5,23 +5,17 @@ import axios from "axios";
 export class FormLayout extends React.Component {
     constructor() {
         super();
-
-        this.kindleEmailChange = this.kindleEmailChange.bind(this);
-        this.urlChange = this.urlChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
         this.state = {
             kindleEmail: "",
             articleURL: "",
         };
     }
 
-    kindleEmailChange(e) {
-        this.setState({ kindleEmail: e.target.value });
-    }
-
-    urlChange(e) {
-        this.setState({ articleURL: e.target.value });
+    generateChangeHandler(fieldName) {
+        return e => {
+            this.setState({ [fieldName]: e.target.value });
+        };
     }
 
     handleSubmit(e) {
@@ -57,16 +51,16 @@ export class FormLayout extends React.Component {
                             Send article
                         </h2>
                     </legend>
-                    <legend>
+                    <p>
                         Please set testererere23@gmail as approved in Amazon services.
-                    </legend>
+                    </p>
                     <EmailInput
                         value={this.state.kindleEmail}
-                        handleChange={this.kindleEmailChange}
+                        handleChange={this.generateChangeHandler("kindleEmail")}
                     />
                     <URLInput
                         value={this.state.url}
-                        handleChange={this.urlChange}
+                        handleChange={this.generateChangeHandler("articleURL")}
                     />
                     <button type="submit">Process</button>
                 </fieldset>
